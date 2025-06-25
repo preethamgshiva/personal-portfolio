@@ -17,7 +17,7 @@ const skillPage = () => {
         <Heading>My Technical Experience/Skills.</Heading>
         <FramerWrapper y={0} x={200} className="mb-8">
           <p className="font-poppins text-xl w-full text-white max-sm:text-lg">
-          <strong className="text-blue-600 font-bold">Early in the game, but playing to win.</strong> I build web apps with React, Next.js, TypeScript, and Node.js, with a strong grip on responsive design and performance. I don't just code websites — I craft experiences. Clean UI, clean code, no shortcuts. Let's build things that break the noise.
+          <strong className="text-blue-600 font-bold">Early in the game, but playing to win.</strong> I build web apps with React, Next.js, TypeScript, and Node.js, with a strong grip on responsive design and performance. I don&apos;t just code websites — I craft experiences. Clean UI, clean code, no shortcuts. Let&apos;s build things that break the noise.
 
 
           </p>
