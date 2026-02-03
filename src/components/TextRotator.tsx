@@ -1,4 +1,4 @@
-import React from "react";
+
 import { portfolioConfig } from "@/config/portfolio.config";
 
 function TextRotator() {

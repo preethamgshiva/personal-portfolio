@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 type FramerMotionProps = {
   children: React.ReactNode,
@@ -11,9 +11,7 @@ type FramerMotionProps = {
   scale?: number
 }
 function FramerWrapper({ children, delay = 0.25, y = 15, x = 0, duration = 0.20, scale = 0, className }: FramerMotionProps) {
-  const [animateConfig, setAnimateConfig] = useState({
-    opacity: 1, y: 0, x: 0
-  })
+
   return (
     <AnimatePresence>
       <motion.div

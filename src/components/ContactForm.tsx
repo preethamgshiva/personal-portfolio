@@ -16,9 +16,10 @@ const ContactForm = () => {
   return (
     <Card>
       <form
-        action={async (FormData) => {
-          "use server";
-          await SendEmail(FormData);
+        onSubmit={async (e) => {
+          e.preventDefault();
+          const formData = new FormData(e.currentTarget);
+          await SendEmail(formData);
         }}
       >
         <CardHeader>

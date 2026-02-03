@@ -1,4 +1,4 @@
-import { color } from "framer-motion";
+
 import FramerWrapper from "./animation/FramerWrapper";
 
 const Heading = ({ children }: { children: React.ReactNode }) => {
