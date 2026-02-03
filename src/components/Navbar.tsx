@@ -1,28 +1,21 @@
-"use client"
 import { cn } from "@/lib/utils";
-
-
 import {
-  Briefcase,
   FolderGit2,
   GraduationCap,
   HomeIcon,
   LightbulbIcon,
   Mail,
   MoreHorizontal,
- 
+  TerminalSquare,
   User,
 } from 'lucide-react';
 
 import { Dock, DockIcon, DockItem, DockLabel } from '@/components/animation/DockAnimation';
 
-import Link from "next/link";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import FramerWrapper from "./animation/FramerWrapper";
-import { usePathname } from "next/navigation";
 
 const Navbar = () => {
-
   const data = [
     {
       title: 'Home',
@@ -59,13 +52,20 @@ const Navbar = () => {
       ),
       href: '/projects',
     },
-   
+
     {
       title: 'Contact us',
       icon: (
         <Mail className='h-full w-full ' />
       ),
       href: '/contact',
+    },
+    {
+      title: 'Terminal',
+      icon: (
+        <TerminalSquare className='h-full w-full' />
+      ),
+      href: 'https://preetham-terminal.vercel.app',
     },
     {
       title: 'More',
@@ -76,8 +76,8 @@ const Navbar = () => {
     },
   ];
   const [scrolling, setScrolling] = useState(false);
-  const pathname = usePathname()
-  
+  const { pathname } = useLocation();
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -97,20 +97,30 @@ const Navbar = () => {
 
   return (
 
-    <div className={`fixed top-5 right-0 left-0 px-0 sm:px-5 m-auto w-full sm:w-fit bg-transparent z-[+9999999] ${scrolling ? "hidden":"block"}`}>
-    <Dock className='items-end pb-3 rounded-full'>
-      {data.map((item, idx) => (
-        <Link href={item.href} key={idx}>
+    <div className={`fixed top-5 right-0 left-0 px-0 sm:px-5 m-auto w-full sm:w-fit bg-transparent z-[+9999999] ${scrolling ? "hidden" : "block"}`}>
+      <Dock className='items-end pb-3 rounded-full'>
+        {data.map((item, idx) => (
+          item.href.startsWith("http") ? (
+            <a href={item.href} key={idx} target="_blank" rel="noopener noreferrer">
+              <DockItem
+                className={cn("aspect-square rounded-full bg-white-200 dark:bg-neutral-800", pathname === item.href && " bg-gray-100 !border !border-primary-sky")}
+              >
+                <DockLabel >{item.title}</DockLabel>
+                <DockIcon className={cn(pathname === item.href && "text-[#2f7df4]")}>{item.icon}</DockIcon>
+              </DockItem>
+            </a>
+          ) : (
+            <Link to={item.href} key={idx}>
 
-        <DockItem
-          className={cn("aspect-square rounded-full bg-white-200 dark:bg-neutral-800",pathname === item.href && " bg-gray-100 !border !border-primary-sky")}
-          >
-          <DockLabel >{item.title}</DockLabel>
-          <DockIcon className={cn(pathname === item.href && "text-[#2f7df4]")}>{item.icon}</DockIcon>
-        </DockItem>
-          </Link>
-      ))}
-    </Dock>
+              <DockItem
+                className={cn("aspect-square rounded-full bg-white-200 dark:bg-neutral-800", pathname === item.href && " bg-gray-100 !border !border-primary-sky")}
+              >
+                <DockLabel >{item.title}</DockLabel>
+                <DockIcon className={cn(pathname === item.href && "text-[#2f7df4]")}>{item.icon}</DockIcon>
+              </DockItem>
+            </Link>
+          )))}
+      </Dock>
     </div>
   );
 };

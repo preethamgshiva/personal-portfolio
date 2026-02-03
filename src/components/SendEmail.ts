@@ -1,29 +1,14 @@
-import { Resend } from "resend";
-import { redirect } from 'next/navigation'
+
 
 
 // EMAIL SENDGING FUCTIONALITY 
 // ADD RESEND_API_KEY IN YOUR .ENV FILE 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// EMAIL SENDGING FUCTIONALITY 
+// ADD RESEND_API_KEY IN YOUR .ENV FILE 
+// const resend = new Resend(process.env.RESEND_API_KEY);
 export const SendEmail = async (formdata: FormData) => {
-  const message = formdata.get("message");
-  const name = formdata.get("name");
-  const SenderEmail = formdata.get("SenderEmail");
-  if (!message) {
-    return {
-      error: "Invalid message",
-    };
-  }
-  await resend.emails.send({
-    from: "Contact Form <onboarding@resend.dev>",
-    to: `preethamgshiva2004@gmail.com`,
-    subject: `${name} From Contact Form.`,
-    reply_to: `${SenderEmail}`,
-    text: `sender email: ${SenderEmail} 
-     ${message}`,
-  });
-
-  return redirect('/')
-
-
+  // Client-side stub
+  console.log("Email sending is currently disabled in the client-side version.", Object.fromEntries(formdata));
+  alert("Email functionality requires a backend server. Check console for form data.");
+  return;
 };

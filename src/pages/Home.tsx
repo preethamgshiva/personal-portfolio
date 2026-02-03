@@ -1,9 +1,10 @@
 import SocialLinks from "@/components/SocialLinks";
 import HeroTexts from "@/components/HeroTexts";
-import HeroImage from "@/components/HeroImage";
+
 import DownLoadResumeBtn from "@/components/DownLoadResumeBtn";
 import FramerWrapper from "@/components/animation/FramerWrapper";
-import TerminalPortfolio from "@/components/TerminalPortfolio";
+import SkillsChart from "@/components/SkillsChart";
+
 
 export default function Home() {
   return (
@@ -28,9 +29,10 @@ export default function Home() {
       >
         <HeroImage />
       </FramerWrapper>*/}
-      <FramerWrapper>
-        <TerminalPortfolio />
-      </FramerWrapper>
+      <div className="w-full mt-2 flex justify-center">
+        <SkillsChart />
+      </div>
+
     </>
   );
 }

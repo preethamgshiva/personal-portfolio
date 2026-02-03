@@ -6,7 +6,7 @@ import {
   Mail,
 } from "lucide-react";
 import { buttonVariants } from "./ui/button";
-import Link from "next/link";
+
 import FramerWrapper from "./animation/FramerWrapper";
 import { portfolioConfig } from "@/config/portfolio.config";
 
@@ -40,15 +40,16 @@ const SocialLinks = () => {
 
         return (
           <FramerWrapper key={indx} delay={timing} y={50}>
-            <Link
-              target="blank"
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
               href={itm.link}
               className={cn(
                 buttonVariants({ variant: "outline", size: "icon" })
               )}
             >
               {itm.icon}
-            </Link>
+            </a>
           </FramerWrapper>
         );
       })}

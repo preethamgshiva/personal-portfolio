@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import Link from "next/link";
+
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import FramerWrapper from "@/components/animation/FramerWrapper";
@@ -44,9 +44,10 @@ const morePage = () => {
                   <p className="text-base font-poppins ">{value.description}</p>
                 </CardContent>
                 <CardFooter>
-                  <Link
+                  <a
                     href={value.link}
-                    target="blank"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={cn(
                       buttonVariants({ variant: "default", size: "lg" }),
                       "w-full gap-3"
@@ -55,7 +56,7 @@ const morePage = () => {
                     {" "}
                     <ExternalLink />
                     Visit here
-                  </Link>
+                  </a>
                 </CardFooter>
               </Card>
             </FramerWrapper>

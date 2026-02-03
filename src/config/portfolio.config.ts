@@ -11,7 +11,7 @@ export const portfolioConfig = {
   // Social Media Links
   socialLinks: {
     instagram: "https://www.instagram.com/preetham_gshiva/",
-    linkedin: "https://www.linkedin.com/in/preethamgshiva",
+    linkedin: "https://www.linkedin.com/in/preetham-g-shiva",
     github: "https://github.com/preethamgshiva", // Assuming this is the GitHub link
     gmail: "preethamgshiva2004@gmail.com",
   },
@@ -170,6 +170,38 @@ export const portfolioConfig = {
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
       },
     ],
+    skillsChart: [
+      {
+        subject: 'Web Dev',
+        A: 90,
+        fullMark: 100,
+      },
+      {
+        subject: 'AI/ML',
+        A: 70,
+        fullMark: 100,
+      },
+      {
+        subject: 'Data Science',
+        A: 75,
+        fullMark: 100,
+      },
+      {
+        subject: 'Photography',
+        A: 70,
+        fullMark: 100,
+      },
+      {
+        subject: 'Gaming',
+        A: 90,
+        fullMark: 100,
+      },
+      {
+        subject: 'Creativity',
+        A: 100,
+        fullMark: 100,
+      },
+    ]
   },
 
   // Education Information
